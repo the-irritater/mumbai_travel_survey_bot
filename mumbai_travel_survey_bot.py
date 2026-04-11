@@ -35,7 +35,9 @@ def apply_custom_css():
         </style>
     """, unsafe_allow_html=True)
 
-CSV_FILE = "survey_responses.csv"
+# Ensure the CSV is saved in the same directory as the script
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CSV_FILE = os.path.join(BASE_DIR, "survey_responses.csv")
 
 QUESTIONS = [
     {"id": "q1", "text": "Are you a legal resident of Mumbai City?", "type": "radio", "options": ["Yes", "No"], "screener": True},
@@ -161,6 +163,7 @@ def save_response():
         df.to_csv(CSV_FILE, mode='a', header=False, index=False)
     else:
         df.to_csv(CSV_FILE, index=False)
+    print(f"DEBUG: Saved response to {CSV_FILE}")
 
 def main():
     apply_custom_css()
@@ -188,6 +191,13 @@ def main():
     # If survey is ended (completed or screened out)
     if st.session_state.completed:
         st.success("You have successfully completed the survey. Your responses have been recorded.")
+        
+        # Show a preview of the saved data to the user
+        if os.path.exists(CSV_FILE):
+            st.markdown("### Your Recorded Response:")
+            df_full = pd.read_csv(CSV_FILE)
+            st.dataframe(df_full.tail(1)) # Show the last row added
+            
         if st.button("Start Over"):
             for key in list(st.session_state.keys()):
                 del st.session_state[key]
@@ -204,6 +214,7 @@ def main():
 
     # Check if we reached the end
     if st.session_state.current_index >= len(QUESTIONS):
+        print(f"DEBUG: Reached end of questions. Index: {st.session_state.current_index}")
         save_response()
         st.session_state.completed = True
         st.rerun()
