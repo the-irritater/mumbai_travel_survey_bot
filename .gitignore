@@ -21,9 +21,7 @@ __pycache__/
 .DS_Store
 
 # Data files
-survey_responses.csv
 *.xlsx
-*.csv
 
 # IDEs
 .vscode/
