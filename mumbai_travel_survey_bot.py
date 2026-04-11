@@ -152,7 +152,10 @@ def save_response():
         
     data["Timestamp"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    df = pd.DataFrame([data])
+    all_columns = [q["id"] for q in QUESTIONS] + ["Completed", "Screened_Out", "Timestamp"]
+    row = {col: data.get(col, "") for col in all_columns}
+    
+    df = pd.DataFrame([row], columns=all_columns)
     
     if os.path.exists(CSV_FILE):
         df.to_csv(CSV_FILE, mode='a', header=False, index=False)
