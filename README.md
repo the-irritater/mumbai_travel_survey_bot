@@ -1,4 +1,4 @@
-# Mumbai Travel Decision-Making Survey Bot 🌍
+# Mumbai Travel Decision-Making Survey Bot 
 
 A professional, conversational Streamlit web application designed to collect and structure research survey responses regarding the travel decision-making patterns of Mumbai residents. 
 

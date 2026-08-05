@@ -10,7 +10,7 @@ import gspread
 
 st.set_page_config(
     page_title="Mumbaikars Travel Survey",
-    page_icon="✈️",
+    page_icon="",
     layout="centered"
 )
 
@@ -213,7 +213,7 @@ def apply_custom_css():
 SECTIONS = [
     {
         "title": "Screening",
-        "icon": "🔍",
+        "icon": "",
         "description": "First, let's check if you're eligible for this survey.",
         "questions": [
             {"id": "q1", "text": "Are you a legal resident of Mumbai City?", "type": "radio", "options": ["Yes", "No"], "screener": True},
@@ -222,7 +222,7 @@ SECTIONS = [
     },
     {
         "title": "Demographics",
-        "icon": "👤",
+        "icon": "",
         "description": "Tell us a bit about yourself.",
         "questions": [
             {"id": "q3", "text": "What is your age group?", "type": "radio", "options": ["18-24 years", "25-34 years", "35-44 years", "45-54 years", "55-64 years", "65 years and above"]},
@@ -235,7 +235,7 @@ SECTIONS = [
     },
     {
         "title": "Recent Trip Details",
-        "icon": "🗺️",
+        "icon": "",
         "description": "Think about your most recent trip outside Mumbai.",
         "questions": [
             {"id": "q9", "text": "Which type of destination did you visit on your most recent trip?", "type": "radio", "options": ["Hill Station / Mountain", "Coastal / Beach", "Cultural / Heritage", "Religious / Pilgrimage", "Nature / Wildlife / Eco-tourism", "International", "Other"]},
@@ -247,7 +247,7 @@ SECTIONS = [
     },
     {
         "title": "Push Motivation – Escape & Relaxation",
-        "icon": "🌴",
+        "icon": "",
         "description": "Rate how strongly you agree with each statement.",
         "questions": [
             {"id": "q14_1", "text": "Travelling helps me escape from the stress and pressure of daily work and city life.", "type": "radio", "options": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"]},
@@ -258,7 +258,7 @@ SECTIONS = [
     },
     {
         "title": "Push Motivation – Adventure & Excitement",
-        "icon": "🏔️",
+        "icon": "",
         "description": "Rate how strongly you agree with each statement.",
         "questions": [
             {"id": "q15_1", "text": "I am motivated to travel because I enjoy exciting and thrilling experiences.", "type": "radio", "options": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"]},
@@ -269,7 +269,7 @@ SECTIONS = [
     },
     {
         "title": "Push Motivation – Family & Bonding",
-        "icon": "👨‍👩‍👧‍👦",
+        "icon": "‍‍‍",
         "description": "Rate how strongly you agree with each statement.",
         "questions": [
             {"id": "q16_1", "text": "Spending quality time with my family is a primary reason I travel.", "type": "radio", "options": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"]},
@@ -280,7 +280,7 @@ SECTIONS = [
     },
     {
         "title": "Push Motivation – Culture & Knowledge",
-        "icon": "📚",
+        "icon": "",
         "description": "Rate how strongly you agree with each statement.",
         "questions": [
             {"id": "q17_1", "text": "I travel to learn about and experience new cultures, traditions, and ways of life.", "type": "radio", "options": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"]},
@@ -291,7 +291,7 @@ SECTIONS = [
     },
     {
         "title": "Push Motivation – Social Status",
-        "icon": "📸",
+        "icon": "",
         "description": "Rate how strongly you agree with each statement.",
         "questions": [
             {"id": "q18_1", "text": "Travelling to popular or exotic destinations improves my status among peers.", "type": "radio", "options": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"]},
@@ -302,7 +302,7 @@ SECTIONS = [
     },
     {
         "title": "Pull Motivation – Safety & Enjoyment",
-        "icon": "🛡️",
+        "icon": "",
         "description": "Rate how strongly you agree with each statement.",
         "questions": [
             {"id": "q19_1", "text": "I prefer travelling to destinations where I feel personally safe and secure.", "type": "radio", "options": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"]},
@@ -313,7 +313,7 @@ SECTIONS = [
     },
     {
         "title": "Pull Motivation – Nature & Environment",
-        "icon": "🌿",
+        "icon": "",
         "description": "Rate how important each factor is for you.",
         "questions": [
             {"id": "q20_1", "text": "Beautiful natural landscapes attract me to a destination.", "type": "radio", "options": ["Not at all important", "Slightly important", "Moderately important", "Important", "Very important"]},
@@ -324,7 +324,7 @@ SECTIONS = [
     },
     {
         "title": "Pull Motivation – Affordability",
-        "icon": "💰",
+        "icon": "",
         "description": "Rate how important each factor is for you.",
         "questions": [
             {"id": "q21_1", "text": "Affordable accommodation and food options are a major factor in choosing a destination.", "type": "radio", "options": ["Not at all important", "Slightly important", "Moderately important", "Important", "Very important"]},
@@ -335,7 +335,7 @@ SECTIONS = [
     },
     {
         "title": "Pull Motivation – Culture & Events",
-        "icon": "🎭",
+        "icon": "",
         "description": "Rate how important each factor is for you.",
         "questions": [
             {"id": "q22_1", "text": "Local festivals, fairs, and cultural events attract me to a destination.", "type": "radio", "options": ["Not at all important", "Slightly important", "Moderately important", "Important", "Very important"]},
@@ -345,7 +345,7 @@ SECTIONS = [
     },
     {
         "title": "Pull Motivation – Nightlife, Food & Shopping",
-        "icon": "🍜",
+        "icon": "",
         "description": "Rate how important each factor is for you.",
         "questions": [
             {"id": "q23_1", "text": "A vibrant nightlife, entertainment options, and social scene attract me to a destination.", "type": "radio", "options": ["Not at all important", "Slightly important", "Moderately important", "Important", "Very important"]},
@@ -357,7 +357,7 @@ SECTIONS = [
     },
     {
         "title": "Pull Motivation – Safety & Stability",
-        "icon": "🏥",
+        "icon": "",
         "description": "Rate how important each factor is for you.",
         "questions": [
             {"id": "q24_1", "text": "Low crime rates and perceived personal safety strongly influence my destination choice.", "type": "radio", "options": ["Not at all important", "Slightly important", "Moderately important", "Important", "Very important"]},
@@ -367,7 +367,7 @@ SECTIONS = [
     },
     {
         "title": "Pull Motivation – Heritage Sites",
-        "icon": "🏛️",
+        "icon": "",
         "description": "Rate how important each factor is for you.",
         "questions": [
             {"id": "q25_1", "text": "The presence of well-known historical monuments and heritage sites attracts me to a destination.", "type": "radio", "options": ["Not at all important", "Slightly important", "Moderately important", "Important", "Very important"]},
@@ -377,7 +377,7 @@ SECTIONS = [
     },
     {
         "title": "Destination Image – Infrastructure",
-        "icon": "🏨",
+        "icon": "",
         "description": "Rate how important each factor is for you.",
         "questions": [
             {"id": "q26_1", "text": "Good quality and reliable accommodation (hotels, homestays, resorts) is important to my choice.", "type": "radio", "options": ["Not at all important", "Slightly important", "Moderately important", "Important", "Very important"]},
@@ -408,7 +408,7 @@ SECTIONS = [
     },
     {
         "title": "Social Media & Word of Mouth",
-        "icon": "📱",
+        "icon": "",
         "description": "Rate how strongly you agree with each statement.",
         "questions": [
             {"id": "q28_1", "text": "Social media content (Instagram, YouTube, Reels, travel influencers) influences my destination choice.", "type": "radio", "options": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"]},
@@ -510,10 +510,10 @@ def save_response():
                     worksheet.append_row(ordered_values)
             except Exception as e:
                 # Don't throw error to user if just Google Sheets fails, but log it
-                st.error(f"⚠️ Google Sheets Sync Failed (CSV saved): {str(e)}")
+                st.error(f" Google Sheets Sync Failed (CSV saved): {str(e)}")
                 
     except Exception as e:
-        st.error(f"⚠️ Failed to save response: {e}")
+        st.error(f" Failed to save response: {e}")
 
 
 # ── Main App ───────────────────────────────────────────────────────────────────
@@ -532,7 +532,7 @@ def main():
     # ── Completed ──────────────────────────────────────────────────────────────
     if st.session_state.completed:
         st.markdown('<div class="main-card" style="text-align:center;">', unsafe_allow_html=True)
-        st.markdown("<h1>Thank You! 🙏</h1>", unsafe_allow_html=True)
+        st.markdown("<h1>Thank You! </h1>", unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
         st.markdown("<p style='font-size:1.15rem; color:#f1f5f9 !important;'>Your responses have been successfully recorded.</p>", unsafe_allow_html=True)
         st.markdown("<p class='secondary-text'>Thank you for contributing to our research on Mumbaikars' travel motivations and destination preferences. Your honest answers will help shape the future of tourism studies at the University of Mumbai.</p>", unsafe_allow_html=True)
@@ -568,7 +568,7 @@ def main():
     if not st.session_state.survey_started:
         # ── Title card ─────────────────────────────────────────────────────────
         st.markdown('<div class="main-card">', unsafe_allow_html=True)
-        st.markdown('<div style="text-align:center;"><span class="welcome-badge">📝 Academic Research</span></div>', unsafe_allow_html=True)
+        st.markdown('<div style="text-align:center;"><span class="welcome-badge"> Academic Research</span></div>', unsafe_allow_html=True)
         st.markdown("<h1 style='text-align:center;'>Mumbaikars Travel Survey</h1>", unsafe_allow_html=True)
         st.markdown("<p style='text-align:center; color:#94a3b8 !important; font-size:1rem;'>Understanding travel motivations & destination preferences of Mumbai residents</p>", unsafe_allow_html=True)
         st.markdown("</div>", unsafe_allow_html=True)
@@ -603,15 +603,15 @@ def main():
         st.markdown("""
         <div class="stat-row">
             <div class="stat-item">
-                <span class="stat-icon">⏱️</span>
+                <span class="stat-icon">⏱</span>
                 <span class="stat-label">5–7 Minutes</span>
             </div>
             <div class="stat-item">
-                <span class="stat-icon">📋</span>
+                <span class="stat-icon"></span>
                 <span class="stat-label">18 Sections</span>
             </div>
             <div class="stat-item">
-                <span class="stat-icon">🔒</span>
+                <span class="stat-icon"></span>
                 <span class="stat-label">100% Anonymous</span>
             </div>
         </div>
@@ -677,7 +677,7 @@ def main():
             label = "Finish & Submit" if idx == total_sections - 1 else "Next →"
             if st.form_submit_button(label, type="primary", use_container_width=True):
                 if not all_answered:
-                    st.error("⚠️ Please answer all questions in this section.")
+                    st.error(" Please answer all questions in this section.")
                 else:
                     for k, v in temp.items():
                         st.session_state.responses[k] = v
