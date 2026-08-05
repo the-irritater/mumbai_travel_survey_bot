@@ -1,32 +1,51 @@
-# Mumbai Travel Decision-Making Survey Bot 
+# Mumbai Travel Survey Bot
 
-A professional, conversational Streamlit web application designed to collect and structure research survey responses regarding the travel decision-making patterns of Mumbai residents. 
+Automated conversational survey bot designed to capture commuting patterns, preferred travel modes, peak-hour bottlenecks, and transit satisfaction across Mumbai suburban transport networks.
 
-## Features
-- **Conversational UI**: Questions are presented one at a time for a low-friction, mobile-friendly user experience.
-- **Dynamic Asset Loading**: Displays beautiful, random photorealistic landmarks of Mumbai (Gateway of India, Marine Drive, CST, Sea Link) at the top of every question.
-- **Smart Screening**: Automatically screens out participants who do not meet the criteria (e.g., non-residents of Mumbai or those who haven't traveled recently).
-- **Automated Data Processing**: All responses are appended seamlessly into a structured `survey_responses.csv` file, making it perfectly prepped for Exploratory Data Analysis (EDA).
+## Application Architecture
 
-## Prerequisites
+Streamlit conversational interface guiding users through structured demographic, mode selection, frequency, and route satisfaction questions:
+- **Suburban Rail**: Central, Western, and Harbour line commuting metrics.
+- **Metro & Monorail**: Urban rapid transit adoption patterns.
+- **Road Transit**: BEST Bus, auto-rickshaw, ride-share, and private vehicle travel.
 
-Make sure you have Python 3.8+ installed. 
+## Core Features & Data Flow
 
-Install the required dependencies using pip:
-```bash
-pip install -r requirements.txt
+| Feature Module | Method / Logic | Output Metric |
+|---|---|---|
+| Survey Flow Engine | Stateful session tracking in Streamlit | Structured survey response row |
+| Questionnaire Parser | Text-based prompt sequence parsing | Standardized question flow |
+| Response Logger | Automated CSV persistence | `survey_responses.csv` data log |
+
+## Project Structure
+
+```
+mumbai_travel_survey_bot/
+├── .streamlit/
+│   └── config.toml
+├── assets/
+│   └── survey_bot_preview.png
+├── mumbai_travel_survey_bot.py
+├── questionnaire.txt
+├── research_questionnaire.pdf
+├── survey_responses.csv
+├── requirements.txt
+└── README.md
 ```
 
 ## How to Run
 
-Launch the Streamlit app locally by executing the following command in your terminal:
+### Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Launch Streamlit Application
 ```bash
 streamlit run mumbai_travel_survey_bot.py
 ```
 
-The application will automatically open in your default web browser at `http://localhost:8502`.
+## Author
 
-## Data Management
-As participants complete the survey, their data is locally logged into `survey_responses.csv`. 
-
-> **Privacy Note:** `survey_responses.csv` is explicitly added to the `.gitignore` to prevent you from accidentally uploading live participant data to public repositories. If you wish to share the dataset, ensure you manually scrub any PII before distributing it.
+Sanman Kadam  
+MSc Statistics | Data Analyst
